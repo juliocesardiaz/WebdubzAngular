@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="webdubz">
+    <head>
+        <meta charset="UTF-8">
+        <title>Webdubz</title>
+        <script src="node_modules/angular-ui-router/node_modules/angular/angular.js"></script>
+		<script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+		<!--<script src="lib/wavesurfer.min.js"></script>-->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.0.52/wavesurfer.min.js"></script>
+		<script src="app.js"></script>
+        <script src="services/TraxFactory.js"></script>
+        <script src="controllers/TraxController.js"></script>
+        <link rel="stylesheet" href="css/skeleton-2.0.4/css/skeleton.css">
+        <link rel="stylesheet" href="css/homepage.css">
+    </head>
+    <body>
+        <div class="container">
+            <div ui-view="body"></div>
+        </div>
+    </body>
+</html>
