@@ -5,6 +5,16 @@
 </div>
 <div class="row" ng-repeat="item in trax.tracks">
    <div class="six columns">
-      <h1>{{ item.title }}</h1>
+      <h5>{{ item.artist }}</h5>
+   </div>
+   <div class="six columns">
+      <h5>{{ item.title }}</h5>
+   </div>
+   <div class="three columns">
+      <a class="button" ng-click="loadTrax(item)">Load</a>
+      <a class="button" ng-click="loadTrax(item)"><i class="fa fa-play"></i></a>
+   </div>
+   <div class="nine columns" id="{{ item.artist }}">
+      
    </div>
 </div>
