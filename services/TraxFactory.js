@@ -1,9 +1,8 @@
-webdubz.factory = ('TraxFactory', function TraxFactory($http) {
-    var factory = {};
-    factory.trax = fetch();
-    function fetch(){
-        $http.get("http://localhost:8000/dubz")
-        .then(function(response){$scope.details = response.data; });
-    }   
-    return factory;
-});
+angular.module('webdubz')
+   .factory('TraxFactory', ['$http', function($http) {
+      var TraxFactory = {};
+      TraxFactory.getTrax = function() {
+         return $http.get('http://localhost:8000/api/v1/dubz');
+      };
+      return TraxFactory;
+}]);
