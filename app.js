@@ -11,4 +11,9 @@ webdubz.config(['$stateProvider', '$urlRouterProvider', function($stateProvider,
         templateUrl: 'partials/trax.html',
         controller: 'TraxCtrl'
     });
+    $stateProvider.state('upload', {
+        url: '/upload',
+        templateUrl: 'partials/upload.html',
+        controller: 'UploadCtrl'
+    });
 }]);

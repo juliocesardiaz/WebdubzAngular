@@ -3,6 +3,11 @@
       <h1><a href="/">Webdubz</a></h1>
    </div>
 </div>
+<div class="row">
+   <div class="twelve columns" id="waveform">
+      
+   </div>
+</div>
 <div class="row" ng-repeat="item in trax.tracks">
    <div class="six columns">
       <h5>{{ item.artist }}</h5>
@@ -12,7 +17,7 @@
    </div>
    <div class="three columns">
       <a class="button" ng-click="loadTrax(item)">Load</a>
-      <a class="button" ng-click="loadTrax(item)"><i class="fa fa-play"></i></a>
+      <a class="button" ng-click="playTrax(item)"><i class="fa fa-play"></i></a>
    </div>
    <div class="nine columns" id="{{ item.artist }}">
       
