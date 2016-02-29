@@ -1,6 +1,6 @@
 /* global angular */
 angular.module('webdubz')
-   .controller('TraxCtrl', ['$scope', 'TraxFactory', function($scope, TraxFactory) {
+   .controller('TraxCtrl', ['$scope', '$http', 'TraxFactory', function($scope, $http, TraxFactory) {
    $scope.status;
    $scope.trax;
    
@@ -15,19 +15,28 @@ angular.module('webdubz')
                 $scope.status = 'Unable to load customer data: ' + error.message;
             });
     };  
-     
-    $scope.loadTrax = function(track) {
-      $scope.wavesurfer = Object.create(WaveSurfer);
-      // console.log(track.id)
-      $scope.wavesurfer.init({
-         container: '#' + track.artist,
-         waveColor: 'violet',
-         progressColor: 'purple'
+    
+    $scope.waveform = Object.create(WaveSurfer);
+    $scope.waveform.init({
+         container: '#waveform',
+         waveColor: 'black',
+         progressColor: 'grey',
+         barWidth: 1
       });
-      $scope.wavesurfer.load(track.path_lq);
+      $scope.loadTrax = function(track) {
+         $scope.waveform.empty();
+         $scope.waveform.load(track.path_lq);
+         
+      }
+      $scope.playTrax = function() {
+         $scope.waveform.play(); 
+      };
       
-    };
-    $scope.playTrax = function() {
-      $scope.wavesurfer.play(); 
-    };
+      $scope.pauseTrax = function() {
+         $scope.waveform.pause();
+         console.log("Hello"); 
+      };
+      $scope.dowloadTrax = function(id) {
+         $http.get('http://localhost:8000/api/v1/download/' + id).then();
+      }
 }]);

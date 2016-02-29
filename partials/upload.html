@@ -1,0 +1,42 @@
+<div id="fixed-header" class="container">
+   <div class="row">
+      <div class="three columns">
+         <h1><a href="/">Webdubz</a></h1>
+      </div>
+      
+      <div class="three columns" id="right-justified">
+         <h1><a href="trax" ui-sref="trax">Dubz</a></h1>
+      </div>
+   </div>
+</div>
+<div id="spacer-2"></div>
+<div class="row">
+   <div class="three columns">
+      <h5>Upload Dubz</h5>
+   </div>
+</div>
+<div class="row">
+   <form name="uploadForm">
+      <label for="title">Title:</label>
+      <input type="text" name="title" id="title" ng-model="traxTitle" required>
+
+      <label for="artist">Artist:</label>
+      <input type="text" name="artist" id="artist" ng-model="traxArtist" required>
+
+      <label for="max_downloads">Max Downloads:</label>
+      <select name="max_downloads" id="max_downloads" ng-model="traxMaxDL" required>
+      <option value=100>1</option>
+      <option value=100>5</option>
+      <option value=100>10</option>
+      <option value=100>100</option>
+      <option value=500>500</option>
+      <option value=1000>1000</option>
+      <option value=10000>10000</option>
+      </select>
+
+      <label for="track">Select Track for Upload: </label>
+      <input type="file" name="track" id="track" ng-model="traxFile" ngf-max-size="50MB" required ngf-model-invalid="errorFiles">
+
+      <a class="button" ng-click="uploadTrax(traxFile)">Upload Track</a>
+   </form>
+</div>

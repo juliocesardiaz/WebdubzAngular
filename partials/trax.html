@@ -1,25 +1,33 @@
-<div class="row">
-   <div class="three columns">
-      <h1><a href="/">Webdubz</a></h1>
-   </div>
-</div>
-<div class="row">
-   <div class="twelve columns" id="waveform">
+<div id="fixed-header" class="container">
+   <div class="row">
+      <div class="three columns">
+         <h1><a href="/">Webdubz</a></h1>
+      </div>
       
+      <div class="three columns" id="right-justified">
+         <h1><a href="" ui-sref="upload">Upload</a></h1>
+      </div>
+   </div>
+   <div class="row">
+      <div class="twelve columns" id="waveform"></div>
    </div>
 </div>
-<div class="row" ng-repeat="item in trax.tracks">
-   <div class="six columns">
+
+<div id="spacer"></div>
+<div class="row track" ng-repeat="item in trax.tracks">
+   <div class="three columns">
       <h5>{{ item.artist }}</h5>
    </div>
-   <div class="six columns">
+   <div class="three columns">
       <h5>{{ item.title }}</h5>
    </div>
-   <div class="three columns">
+   <div class="six columns">
       <a class="button" ng-click="loadTrax(item)">Load</a>
-      <a class="button" ng-click="playTrax(item)"><i class="fa fa-play"></i></a>
+      <a class="button" ng-click="playTrax()"><i class="fa fa-play"></i></a>
+      <a class="button" ng-click="pauseTrax()"><i class="fa fa-pause"></i></a>
+      <a class="button" ng-click="downloadTrax(item.id)"><i class="fa fa-download"></i></a>
    </div>
-   <div class="nine columns" id="{{ item.artist }}">
+   <div class="nine columns" id="{{  }}">
       
    </div>
 </div>

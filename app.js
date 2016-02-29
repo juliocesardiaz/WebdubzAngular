@@ -1,10 +1,9 @@
-var webdubz = angular.module('webdubz', ['ui.router']);
+var webdubz = angular.module('webdubz', ['ui.router', 'ngFileUpload']);
 
 webdubz.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     $stateProvider.state('home', {
         url: '',
-        templateUrl: 'partials/home.html',
-        controller: 'TraxCtrl'
+        templateUrl: 'partials/home.html'
     });
     $stateProvider.state('trax', {
         url: '/trax',
