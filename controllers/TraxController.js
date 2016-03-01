@@ -19,13 +19,13 @@ angular.module('webdubz')
     $scope.waveform = Object.create(WaveSurfer);
     $scope.waveform.init({
          container: '#waveform',
-         waveColor: 'black',
-         progressColor: 'grey',
-         barWidth: 1
+         waveColor: '#A4BFD8',
+         progressColor: '#3C92E8',
+         barWidth: 2
       });
       $scope.loadTrax = function(track) {
          $scope.waveform.empty();
-         $scope.waveform.load(track.path_lq);
+         $scope.waveform.load('http://webdubz.dev' + track.path_lq);
          
       }
       $scope.playTrax = function() {
@@ -37,6 +37,6 @@ angular.module('webdubz')
          console.log("Hello"); 
       };
       $scope.dowloadTrax = function(id) {
-         $http.get('http://localhost:8000/api/v1/download/' + id).then();
+         $http.get('http://webdubz.dev/api/v1/download/' + id).then();
       }
 }]);
