@@ -25,7 +25,7 @@ angular.module('webdubz')
       });
       $scope.loadTrax = function(track) {
          $scope.waveform.empty();
-         $scope.waveform.load('http://webdubz.dev' + track.path_lq);
+         $scope.waveform.load(track.path_lq);
          
       }
       $scope.playTrax = function() {
@@ -34,9 +34,12 @@ angular.module('webdubz')
       
       $scope.pauseTrax = function() {
          $scope.waveform.pause();
-         console.log("Hello"); 
       };
-      $scope.dowloadTrax = function(id) {
-         $http.get('http://webdubz.dev/api/v1/download/' + id).then();
+      $scope.downloadTrax = function(id) {
+         $http.get('http://localhost:8000/api/v1/download/' + id);
       }
+      
+      $scope.destroyTrax = function() {
+         $scope.waveform.destroy();
+      };
 }]);

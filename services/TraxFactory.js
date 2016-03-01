@@ -4,7 +4,7 @@ angular.module('webdubz')
       var TraxFactory = {};
       
       TraxFactory.getTrax = function() {
-         return $http.get('http://webdubz.dev/api/v1/dubz');
+         return $http.get('http://localhost:8000/api/v1/dubz');
       };
       
       return TraxFactory;

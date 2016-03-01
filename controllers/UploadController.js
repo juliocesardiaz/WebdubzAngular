@@ -4,7 +4,7 @@ angular.module('webdubz')
    
    $scope.uploadTrax = function(file) {
       file.upload = Upload.upload({
-         url: 'http://webdubz.dev/api/v1/upload',
+         url: 'http://localhost:8000/api/v1/upload',
          data: {
             track: file,
             title: $scope.traxTitle,
