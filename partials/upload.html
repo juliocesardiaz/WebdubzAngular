@@ -25,9 +25,9 @@
 
       <label for="max_downloads">Max Downloads:</label>
       <select name="max_downloads" id="max_downloads" ng-model="traxMaxDL" required>
-      <option value=100>1</option>
-      <option value=100>5</option>
-      <option value=100>10</option>
+      <option value=1>1</option>
+      <option value=5>5</option>
+      <option value=10>10</option>
       <option value=100>100</option>
       <option value=500>500</option>
       <option value=1000>1000</option>
@@ -35,7 +35,7 @@
       </select>
 
       <label for="track">Select Track for Upload: </label>
-      <input type="file" name="track" id="track" ngf-select ng-model="traxFile" ngf-max-size="50MB" required ngf-model-invalid="errorFiles">
+      <input type="file" name="track" id="track" ngf-select ng-model="traxFile" ngf-max-size="100MB" required ngf-model-invalid="errorFiles">
 
       <a class="button" ng-click="uploadTrax(traxFile)" ui-sref="trax">Upload Track</a>
    </form>
