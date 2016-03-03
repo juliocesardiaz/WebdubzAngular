@@ -21,13 +21,16 @@
    <div class="three columns">
       <h5>{{ item.title }}</h5>
    </div>
-   <div class="six columns">
+   <div class="four columns">
       <a class="button" ng-click="loadTrax(item)">Load</a>
       <a class="button" ng-click="playTrax()"><i class="fa fa-play"></i></a>
       <a class="button" ng-click="pauseTrax()"><i class="fa fa-pause"></i></a>
       <a class="button" ng-click="checkDownload(item.id)"><i class="fa fa-download"></i></a>
    </div>
-   <div class="nine columns" id="{{  }}">
-      
+   <div class="two columns" id="{{  }}">
+      <h5>Downloads Left</h5>
+      <ul>
+         <li>{{ item.max_downloads - item.current_downloads}}</li>
+      </ul>
    </div>
 </div>
