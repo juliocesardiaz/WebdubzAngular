@@ -35,9 +35,26 @@ angular.module('webdubz')
       $scope.pauseTrax = function() {
          $scope.waveform.pause();
       };
-      $scope.downloadTrax = function(id) {
+      
+      function downloadTrax(id) {
          window.location = ('http://webdubz.dev/api/v1/download/' + id);
       }
+      
+      $scope.checkDownload = function(id) {
+         
+         var message = 
+         $http.get('http://webdubz.dev/api/v1/checkdownload/' + id).then( function success(res) {
+            message = res.data;
+            if(message.message_return.message == "success")
+               downloadTrax(id);
+            else
+               alert('No More Download :(');
+         }, function error(res) {
+            message = res.error;
+         });
+         
+         
+      };
       
       $scope.destroyTrax = function() {
          $scope.waveform.destroy();
