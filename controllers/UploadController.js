@@ -3,9 +3,9 @@ angular.module('webdubz')
    function($scope, Upload, $timeout, $http, $state) {
    
    $scope.uploadTrax = function(file) {
-      $http.get('http://webdubz.dev/api/v1/csrf').then( function(response) {        
+      $http.get('http://webdubz.com/api/v1/csrf').then( function(response) {        
          file.upload = Upload.upload({
-            url: 'http://webdubz.dev/api/v1/upload',
+            url: 'http://webdubz.com/api/v1/upload',
             method: 'POST',
             headers:{'X-Csrf-Token': response},
             data: {
@@ -26,9 +26,11 @@ angular.module('webdubz')
                $scope.errorMsg = response.status + ':' + response.data; 
          }, function (evt) {
             file.progress = Math.min(100, parseInt(100.0 * evt.loaded / evt.total));
-         }).then( function(status) {
-            if(status = 0)
+            if(file.progress = 100);
                $state.go('trax');
+         }).then( function(status) {
+            // if(status = 0)
+            //    $state.go('trax');
          });
       });
    }

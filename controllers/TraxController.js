@@ -25,7 +25,7 @@ angular.module('webdubz')
       });
       $scope.loadTrax = function(track) {
          $scope.waveform.empty();
-         $scope.waveform.load('http://webdubz.dev' + track.path_lq);
+         $scope.waveform.load('http://webdubz.com' + track.path_lq);
          
       }
       $scope.playTrax = function() {
@@ -37,18 +37,19 @@ angular.module('webdubz')
       };
       
       function downloadTrax(id) {
-         window.location = ('http://webdubz.dev/api/v1/download/' + id);
+         window.location = ('http://webdubz.com/api/v1/download/' + id);
       }
       
       $scope.checkDownload = function(id) {
          
          var message = 
-         $http.get('http://webdubz.dev/api/v1/checkdownload/' + id).then( function success(res) {
+         $http.get('http://webdubz.com/api/v1/checkdownload/' + id).then( function success(res) {
             message = res.data;
             if(message.message_return.message == "success")
                downloadTrax(id);
             else
-               alert('No More Download :(');
+               if(!alert('No More Download :('))
+                  window.location.reload();
          }, function error(res) {
             message = res.error;
          });
