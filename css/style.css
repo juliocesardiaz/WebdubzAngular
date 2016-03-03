@@ -38,3 +38,15 @@ a:hover{
     font-size: 50px;
     font-family: 'Lato';
 }
+
+.load-buttons {
+   padding-top: 14px;
+}
+.dls-left {
+   width: 225px;
+}
+
+.artist {
+   margin-bottom: 0;
+   color: #BF6169;
+}

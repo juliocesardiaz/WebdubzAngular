@@ -16,16 +16,14 @@
 <div id="spacer"></div>
 <div class="row track" ng-repeat="item in trax.tracks">
    <div class="three columns">
-      <h5>{{ item.artist }}</h5>
-   </div>
-   <div class="three columns">
+      <p class="artist">{{ item.artist }}</p>
       <h5>{{ item.title }}</h5>
    </div>
-   <div class="six columns">
+   <div class="nine columns load-buttons">
       <a class="button" ng-click="loadTrax(item)">Load</a>
       <a class="button" ng-click="playTrax()"><i class="fa fa-play"></i></a>
       <a class="button" ng-click="pauseTrax()"><i class="fa fa-pause"></i></a>
       <a class="button" ng-click="checkDownload(item.id)"><i class="fa fa-download"></i></a>
-      <h5 class="button">DLs Left:{{ item.max_downloads - item.current_downloads}}</h5>
+      <h5 class="button dls-left">DownLoads Left:{{ item.max_downloads - item.current_downloads}}</h5>
    </div>
 </div>
