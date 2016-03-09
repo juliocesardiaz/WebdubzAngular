@@ -37,6 +37,9 @@
       <label for="track">Select Track for Upload: </label>
       <input type="file" name="track" id="track" ngf-select ng-model="traxFile" ngf-max-size="100MB" required ngf-model-invalid="errorFiles">
 
-      <a class="button" ng-click="uploadTrax(traxFile)" ui-sref="trax">Upload Track</a>
+      <a class="button" ng-click="uploadTrax(traxFile)">Upload Track</a>
    </form>
+   <div class="twelve columns">
+      <progress value="{{ traxFile.progress }}" max="100"></progress>
+   </div>
 </div>
